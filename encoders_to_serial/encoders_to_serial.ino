@@ -27,13 +27,6 @@ String data;
 
 void setup() 
 {
-  /*
-  pinMode(A0, INPUT);
-  pinMode(A1, INPUT);
-  pinMode(A2, INPUT);
-  pinMode(A3, INPUT);
-  pinMode(A4, INPUT);
-  */
   //initialize serial communications at a 9600 baud rate
   Serial.begin(9600);
 }
@@ -122,24 +115,6 @@ if (newReading3 != enc3val){
 }
 
 
-
-/*
-data = String(map(analogRead(A0),0,1023,0,255));
-Serial.print("0c"+data+"w");
-delay(5);
-
-data = String(map(analogRead(A1),0,1023,0,255));
-Serial.print("1c"+data+"w");
-delay(5);
-
-data = String(map(analogRead(A2),0,1023,0,255));
-Serial.print("2c"+data+"w");
-delay(5);
-
-data = String(map(analogRead(A3),0,1023,0,255));
-Serial.print("3c"+data+"w");
-delay(5);
-*/
 
 delay(100);
 }
