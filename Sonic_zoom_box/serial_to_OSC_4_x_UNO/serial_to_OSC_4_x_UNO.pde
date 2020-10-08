@@ -68,21 +68,21 @@ void draw()
       if (c=='c') channels[i] = values[i];
       else if (c=='w') {
         //DmxSimple.write(channel, value);
-        println("port", i, channels[i], values[i]);
-        /*
+        //println("port", i, channels[i], values[i]);
+        
         OscMessage myMessage;
-        if (channel==0) myMessage = new OscMessage("/sensor0");
-        else if (channel==1) myMessage = new OscMessage("/sensor1");
-        else if (channel==2) myMessage = new OscMessage("/sensor2");
-        else if (channel==3) myMessage = new OscMessage("/sensor3");
+        if (channels[i]==0) myMessage = new OscMessage("/sensor0");
+        else if (channels[i]==1) myMessage = new OscMessage("/sensor1");
+        else if (channels[i]==2) myMessage = new OscMessage("/sensor2");
+        else if (channels[i]==3) myMessage = new OscMessage("/sensor3");
         else myMessage = new OscMessage("/errro");
         
         //myMessage.add(channel); // add an int to the osc message
-        myMessage.add(value);
+        myMessage.add(values[i]);
   
         // send the message
         oscP5.send(myMessage, myRemoteLocation); 
-        */
+        
       }
       values[i] = 0;
     }
