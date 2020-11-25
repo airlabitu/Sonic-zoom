@@ -1,4 +1,4 @@
-#N canvas 834 91 898 740 12;
+#N canvas 738 29 907 740 12;
 #X obj 377 194 adc~ 1 2 3 4;
 #X obj 134 292 env~ 128;
 #X obj 137 318 - 100;
@@ -13,16 +13,16 @@
 #X obj 777 326 - 100;
 #X obj 778 353 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
 #X obj 431 624 dac~;
-#X obj 76 314 line~;
-#X msg 77 289 \$1 20;
-#X obj 77 152 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 79 317 line~;
+#X msg 80 292 \$1 20;
+#X obj 80 155 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 700 383 *~;
-#X obj 717 355 line~;
-#X msg 718 330 \$1 20;
-#X obj 718 192 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 701 350 *~;
+#X obj 719 325 line~;
+#X msg 720 300 \$1 20;
+#X obj 720 162 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 58 337 *~;
+#X obj 61 340 *~;
 #X obj 294 317 line~;
 #X msg 295 292 \$1 20;
 #X obj 295 155 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
