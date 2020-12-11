@@ -8,20 +8,11 @@ NetAddress myRemoteLocation;
 
 //Serial myPort0;  // Create object from Serial class
 //Serial myPort1;  // Create object from Serial class
-//Serial myPort2;  // Create object from Serial class
-//Serial myPort3;  // Create object from Serial class
 String val;     // Data received from the serial port
 
 Serial ports [] = new Serial[4];
 int values [] = new int[4];
 int channels [] = new int[4];
-
-/*
-int value0 = 0;
-int value1 = 0;
-int channel0;
-int channel1;
-*/
 
 
 int encoderValues[] = {10, 50, 200, 255};
@@ -42,26 +33,12 @@ void setup()
   int count = 0;
   for (int i = 0; i < Serial.list().length; i++){
     println(i, Serial.list()[i]);
-    if (Serial.list()[i].indexOf("/dev/tty.usbmodem") != -1 && count < 4) {
+    if ((Serial.list()[i].indexOf("/dev/tty.usbmodem") != -1 || Serial.list()[i].indexOf("/dev/ttyACM") != -1) && count < 4) {
       ports[count] = new Serial(this, Serial.list()[i], 9600);
       println("Added serial port: ", Serial.list()[i], "at index ", count);
       count++;
     }
   }
-  //println(Serial.list());
-  //String portName = Serial.list()[4]; //change the 0 to a 1 or 2 etc. to match your port
-  
-  /*
-  ports[0] = new Serial(this, Serial.list()[4], 9600);
-  ports[1] = new Serial(this, Serial.list()[5], 9600);
-  ports[2] = new Serial(this, Serial.list()[6], 9600);
-  ports[3] = new Serial(this, Serial.list()[7], 9600);
-  */
-  
-  //myPort0 = new Serial(this, Serial.list()[4], 9600);
-  //myPort1 = new Serial(this, Serial.list()[5], 9600);
-  
-  //println(Serial.list());
 }
 
 void draw()
@@ -111,38 +88,6 @@ void draw()
     rect(25+i*50, height-25-encoderValues[i], 25, encoderValues[i]);
     //println(25+(i+1)*50, height-25-encoderValues[i], 25, encoderValues[i]);
   }
-  
-  /*
-  
-  int c1;
-  
-  while(myPort1.available()>0){
-  c1 = myPort1.read();
-  if ((c1>='0') && (c1<='9')) {
-    value1 = 10*value1 + c1 - '0';
-  } else {
-    if (c1=='c') channel1 = value1;
-    else if (c1=='w') {
-      //DmxSimple.write(channel, value);
-      println("myPort1", channel1, value1);
-      
-      OscMessage myMessage;
-      if (channel==0) myMessage = new OscMessage("/sensor0");
-      else if (channel==1) myMessage = new OscMessage("/sensor1");
-      else if (channel==2) myMessage = new OscMessage("/sensor2");
-      else if (channel==3) myMessage = new OscMessage("/sensor3");
-      else myMessage = new OscMessage("/errro");
-      
-      //myMessage.add(channel); // add an int to the osc message
-      myMessage.add(value);
-
-      //send the message
-      oscP5.send(myMessage, myRemoteLocation); 
-      
-    }
-    value1 = 0;
-  }
-  */
   }
   
   
