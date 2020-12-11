@@ -67,8 +67,12 @@ void setup()
 void draw()
 {
   
-  /*
+  
   for (int i = 0; i<4; i++){
+    if (ports[i] == null) {
+      println("Port ", i, "skipped");
+      continue;
+    }
     int c;
 
     while(ports[i].available()>0){
@@ -80,7 +84,9 @@ void draw()
       else if (c=='w') {
         //DmxSimple.write(channel, value);
         //println("port", i, channels[i], values[i]);
-        
+        encoderValues[i] = values[i];
+        println(int(map(values[i], 0, 255, 0, 6)));
+        ports[i].write(""+int(map(values[i], 0, 255, 0, 6)));
         OscMessage myMessage;
         if (channels[i]==0) myMessage = new OscMessage("/sensor0");
         else if (channels[i]==1) myMessage = new OscMessage("/sensor1");
@@ -99,7 +105,7 @@ void draw()
     }
     }
   }
-  */
+  
   background(0);
   for (int i = 0; i < 4; i++){
     rect(25+i*50, height-25-encoderValues[i], 25, encoderValues[i]);

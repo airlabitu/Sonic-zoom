@@ -13,19 +13,22 @@ int channel;
 
 Encoder enc(2, 3); // sensor0
 
-float outStep = 0.5;
 long newReading = 0;
 
 long encVal = -999;
 
-float outputVal = 0;
 
 String data;
 
 long timer;
-int interval = 5;
+int interval = 10;
 
 char val;
+
+int encoderFixedScale;
+int scale = 5000;
+long min = 0;
+long max = 255;
 
 void setup() 
 {
@@ -56,16 +59,6 @@ void loop()
     FastLED.show();
     
    }
-
-
-/*
-       if (val == '0') leds[0] = CRGB(val,0,0);
-       else if (val == '1') leds[1] = CRGB(val,0,0);
-       else if (val == '2') leds[2] = CRGB(val,0,0);
-       else if (val == '3') leds[3] = CRGB(val,0,0);
-       else if (val == '4') leds[4] = CRGB(val,0,0);
-       else if (val == '5') leds[5] = CRGB(val,0,0);
-       */
          
    
 
@@ -76,21 +69,35 @@ newReading = enc.read();
 //delay(10);
 
 if (newReading != encVal){
+  if (newReading < min){
+    min = newReading;
+    max = min+scale;
+  }
+  else if (newReading > max){
+    max = newReading;
+    min = max - scale;
+  }
   
-  if (newReading > encVal){ 
-    if (outputVal+outStep <= 255) outputVal+=outStep;
-  }
-  else if (newReading < encVal){
-    if (outputVal-outStep >= 0) outputVal-=outStep;
-  }
+  encoderFixedScale = (int)map(newReading, min, max, 0, scale);
+  
+  /*
+  Serial.print(min);
+  Serial.print(" , ");
+  Serial.print(max);
+  Serial.print(" , ");
+  Serial.print(newReading);
+  Serial.print(" , ");
+  Serial.println(encoderFixedScale);
+  */
+
   encVal = newReading;
-  data = String(int(outputVal));
-  //Serial.println(outputVal);
+  data = String(int(map(encoderFixedScale, 0, 5000, 0, 255)));
+
 }
 
 if (millis() > timer + interval){
   timer = millis();
-  Serial.println("0c"+data+"w");  
+  Serial.println("3c"+data+"w");  
 }
 
 }

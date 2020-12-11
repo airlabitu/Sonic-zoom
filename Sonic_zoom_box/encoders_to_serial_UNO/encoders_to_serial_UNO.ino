@@ -47,7 +47,7 @@ if (newReading != encVal){
 
 if (millis() > timer + interval){
   timer = millis();
-  Serial.println("3c"+data+"w");  
+  Serial.println("0c"+data+"w");  
 }
 
 }
