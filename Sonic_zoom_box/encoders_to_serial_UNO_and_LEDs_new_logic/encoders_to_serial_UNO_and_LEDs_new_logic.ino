@@ -2,7 +2,7 @@
 #include <FastLED.h>
 
 #define NUM_LEDS 6
-#define DATA_PIN 7
+#define DATA_PIN A5
 // Define the array of leds
 CRGB leds[NUM_LEDS];
 
@@ -49,12 +49,12 @@ void loop()
 
     // turn of all
     for (int i = 0; i < 6; i++){
-      leds[i] = CRGB(0,0,0);
+      leds[5-i] = CRGB(0,0,0);
     }
     
     // turn on the needed ones
     for (int i = 0; i < val-48; i++){
-      leds[i] = CRGB(0,255,0);
+      leds[5-i] = CRGB(0,255,0);
     }
     FastLED.show();
     
@@ -97,7 +97,7 @@ if (newReading != encVal){
 
 if (millis() > timer + interval){
   timer = millis();
-  Serial.println("3c"+data+"w");  
+  Serial.println("0c"+data+"w");  
 }
 
 }
