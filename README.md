@@ -3,23 +3,21 @@
 Electronics part list
 - 4 x Arduino UNO's
 - 4 x Rotaty encoder LPD3806
-- 1 x Raspberry Pi 4 (4 GB ram)
 - 1 x Zoom recorder
 - Microphones: 2 x contact mic, 1 x voice mic, 1 x clip-on mic or 1x voice mic.
-- 1 x Wirelsee sender/receiver for voice mic. 
+- 1 x Wirelsee sender/receiver for voice mic.
+- 1 x Powered USB hub
+- 1 x Mac Book Pro or Mac Mini
 
 Software list
-- PureData : sound mixing
-- Arduino : Encoder input
-- Processing : Serial to OSC bridge
+- PureData : Sound mixing
+- Arduino : Rotary encoder input, and LED indicator control
+- Processing : Serial to OSC bridge, and LED control
 
 
-Starting the project on the Raspberry Pi
-- 1 Start the Pi
-- 2 Open the Processing sketch found at:
-    /Home/Pi/Documents/Byhaven_setup/serial_to_OSC/serial_to_OSC.pde
-- 3 Open the Pure Data patch found at:
-    /Home/Pi/Documents/Byhaven_setup/pd_v2.pd
+Starting the project on the Mac
+- 1 Run the Processing sketch called: serial_to_OSC_4_x_UNO_visualized.pde
+- 3 Open the Pure Data patch found at: pd_4_mic_H6_with_sensors.pd
 - 4 Enable the DSP in Pure Data
 
 Now the project should be running!!!
