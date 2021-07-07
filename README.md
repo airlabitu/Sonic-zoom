@@ -1,10 +1,12 @@
 # Sonic-zoom
 
 Electronics part list
-- 1 x Arduino maga ADK
+- 4 x Arduino UNO's
 - 4 x Rotaty encoder LPD3806
 - 1 x Raspberry Pi 4 (4 GB ram)
-- 2 x USB soundcards (Behringer U-Control UCA222)
+- 1 x Zoom recorder
+- Microphones: 2 x contact mic, 1 x voice mic, 1 x clip-on mic or 1x voice mic.
+- 1 x Wirelsee sender/receiver for voice mic. 
 
 Software list
 - PureData : sound mixing
