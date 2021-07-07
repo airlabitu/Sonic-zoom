@@ -3,7 +3,7 @@
 Electronics part list
 - 4 x Arduino UNO's
 - 4 x Rotaty encoder LPD3806
-- 1 x Zoom recorder
+- 1 x Zoom H6 recorder
 - Microphones: 2 x contact mic, 1 x voice mic, 1 x clip-on mic or 1x voice mic.
 - 1 x Wirelsee sender/receiver for voice mic.
 - 1 x Powered USB hub
