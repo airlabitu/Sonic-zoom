@@ -1,4 +1,4 @@
-# sound_of_sundholm
+# Sonic-zoom
 
 Electronics part list
 - 1 x Arduino maga ADK
