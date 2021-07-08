@@ -10,14 +10,13 @@ Electronics part list
 - 1 x Mac Book Pro or Mac Mini
 
 Software list
-- PureData : Sound mixing
+- Ableton Live 10 : Sound mixing
 - Arduino : Rotary encoder input, and LED indicator control
 - Processing : Serial to OSC bridge, and LED control
 
 
 Starting the project on the Mac
 - 1 Run the Processing sketch called: serial_to_OSC_4_x_UNO_visualized.pde
-- 3 Open the Pure Data patch found at: pd_4_mic_H6_with_sensors.pd
-- 4 Enable the DSP in Pure Data
+- 2 Open the Ableton Live set called: MIDI-to-Ableton-Zoom_H6-6-mic.als
 
 Now the project should be running!!!
